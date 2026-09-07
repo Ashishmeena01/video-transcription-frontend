@@ -131,3 +131,11 @@
     @apply font-sans;
     }
 }
+
+Link{
+  text-decoration: none;
+}
+
+body{
+  color:white
+}
