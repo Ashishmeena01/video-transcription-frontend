@@ -109,13 +109,11 @@ export function getGoogleLoginUrl() {
   return `${base}/api/user/login-google`;
 }
 
-export async function transcribeVideo(file: File) {
-  const formData = new FormData();
-  formData.append("video", file);
-
+export async function transcribeVideo(url: string) {
+  const data = { transcribeUrl: url };
   return apiFetch<{ transcript: string }>("/api/ai/transcribe", {
     method: "POST",
-    body: formData,
+    body: JSON.stringify(data)
   });
 }
 

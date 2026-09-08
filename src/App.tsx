@@ -2,20 +2,18 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import { motion } from "motion/react";
 import Navbar from "./components/navbar";
 import { ProtectedRoute } from "./components/protected-route";
-import { HoverBorderGradient } from "./components/ui/hover-border-gradient";
 import Login from "./pages/login";
 import AuthCallback from "./pages/auth-callback";
 import Chat from "./pages/chat";
 import Captioning from "./pages/captioning";
 import { useEffect } from "react";
-import { ArrowBigUp, ArrowUpSquare, CaptionsIcon, MessageCircleIcon } from "lucide-react";
-import { BsGraphUpArrow } from "react-icons/bs";
+import { ArrowUpSquare, CaptionsIcon, } from "lucide-react";
 
 function Home() {
   useEffect(() => { console.log("printing") }, [])
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#0a0a0a] text-foreground">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,_rgba(200,245,66,0.18),_transparent),linear-gradient(180deg,#0a0a0a_0%,#111_55%,#0a0a0a_100%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(200,245,66,0.18),transparent),linear-gradient(180deg,#0a0a0a_0%,#111_55%,#0a0a0a_100%)]" />
       <motion.div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-30"
@@ -36,7 +34,7 @@ function Home() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="font-[family-name:var(--font-display)] text-5xl leading-[1.05] tracking-tight sm:text-7xl"
+          className="font-(family-name:--font-display)text-5xl leading-[1.05] tracking-tight sm:text-7xl"
         >
           Video-Transcription
         </motion.p>
@@ -77,7 +75,7 @@ function Home() {
 function NotFound() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-[#0a0a0a] text-foreground">
-      <p className="font-[family-name:var(--font-display)] text-4xl">404</p>
+      <p className="font-(family-name:--font-display) text-4xl">404</p>
       <p className="text-foreground/50">Page not found</p>
       <Link to="/" className="text-[#c8f542] hover:underline">
         Go home
@@ -99,7 +97,7 @@ function App() {
         <Route path="/auth/callback" element={<AuthCallback />} />
 
         <Route
-        //  element={<ProtectedRoute />}
+         element={<ProtectedRoute />}
          >
           <Route path="/captioning" element={<Captioning />} />
           <Route path="/chat" element={<Chat />} />

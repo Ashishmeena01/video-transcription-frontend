@@ -38,15 +38,15 @@ function Navbar() {
           </NavLink>
 
           {user ? (
-            <div className="ml-2 flex items-center gap-2">
+            <div className="ml-[2px] flex items-center gap-[2px]">
               {user.profilePicture ? (
                 <img
                   src={user.profilePicture}
                   alt={user.name}
-                  className="size-8 rounded-full object-cover ring-1 ring-white/20"
+                  className="size-[20px] rounded-full object-cover ring-1 ring-white/20"
                 />
               ) : (
-                <div className="flex size-8 items-center justify-center rounded-full bg-[#c8f542] text-xs font-semibold text-black">
+                <div className="flex size-[8px] items-center justify-center rounded-full bg-[#c8f542] text-xs font-semibold text-black">
                   {user.name?.charAt(0)?.toUpperCase() || "U"}
                 </div>
               )}
@@ -54,7 +54,7 @@ function Navbar() {
                 variant="ghost"
                 size="sm"
                 onClick={logout}
-                className="text-foreground/70 hover:bg-white/10 hover:text-foreground"
+                className="text-background/70 hover:bg-white/10 hover:text-background/90 flex items-center gap-[2px] rounded-md px-3 py-1.5 text-sm transition"
               >
                 Log out
               </Button>
@@ -62,7 +62,7 @@ function Navbar() {
           ) : (
             <Link
               to="/login"
-              className="ml-2 h-[30px] [text-decoration:none] transition-shadow  [box-shadow:inset_0px_0px_3px_rgba(0,0,0,1)] w-[80px] bg-foreground text-background text-center flex items-center justify-center rounded-lg  px-2.5 text-[0.8rem] font-medium text-black transition"
+              className="ml-2 h-[30px] [text-decoration:none]  [box-shadow:inset_0px_0px_3px_rgba(0,0,0,1)] w-[80px] bg-foreground text-background text-center flex items-center justify-center rounded-lg  px-2.5 text-[0.8rem] font-medium text-black transition"
             >
               Sign in <ArrowRight size={17}/>
             </Link>
