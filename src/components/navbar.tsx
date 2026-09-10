@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useAuthStore } from "@/states/user-state";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowRightFromLine, MoveRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 function Navbar() {
   const user = useAuthStore((s) => s.user);
